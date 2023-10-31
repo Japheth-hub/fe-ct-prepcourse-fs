@@ -23,8 +23,9 @@ function incrementarPorUno(array) {
    // Retornar un arreglo con los elementos incrementados en +1.
    // Tu código:
    return array.map((numero) => {
-      numero++;
+      return numero+1;
    })
+   
 }
 
 function agregarItemAlFinalDelArray(array, elemento) {
@@ -56,7 +57,11 @@ function arrayContiene(array, elemento) {
    // Verifica si el elemento existe dentro del arreglo recibido.
    // Retornar true si está, o false si no está.
    // Tu código:
-   array.inlcudes(elemento);
+   if(array.includes(elemento)){
+      return true;
+   } else {
+      return false;
+   }
 }
 
 function agregarNumeros(arrayOfNums) {
@@ -99,10 +104,10 @@ function multiplicarArgumentos() {
    // Si no se pasan argumentos retorna 0. Si se pasa un argumento, simplemente retórnalo.
    // [PISTA]: "arguments" es un arreglo.
    // Tu código:
+   let producto = 1;
    if(arguments.length === 0){
       return 0;
    } else {
-      let producto = 1;
       for(let i = 0; i<arguments.length; i++){
          producto *= arguments[i];
       }
@@ -232,13 +237,12 @@ function continueStatement(num) {
    // [PISTA]: utiliza el statement 'continue'.
    // Tu código:
    let array = [];
-   for(let i = 0; i<10; i++){
-    num += 2;
-    if(i+1 === 5){
+  for (let i = 0; i < 10; i++) {
+    if (i === 4) {
       continue;
-    } else {
-      array.push(num);
     }
+    num += 2;
+    array.push(num);
   }
   return array;
 }
